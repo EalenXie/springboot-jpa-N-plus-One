@@ -71,9 +71,6 @@ public class CategoryRepositoryTest {
     @Transactional
     public void findCategory() {
         List<Category> categories = categoryRepository.findAll();
-        for (Category category : categories) {
-            System.out.println(JSONArray.toJSONString(category));
-        }
-
+        System.out.println(JSONArray.toJSONString(categories.get(0)));
     }
 }

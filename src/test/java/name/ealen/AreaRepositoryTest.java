@@ -23,7 +23,6 @@ public class AreaRepositoryTest {
     @Autowired
     private AreaRepository areaRepository;
 
-
     /**
      * 新增区域测试
      */
@@ -63,14 +62,12 @@ public class AreaRepositoryTest {
 
 
     /**
-     * 一个典型的 N+1 查询
+     * 触发懒加载查询 典型的 N+1 现象
      */
     @Test
     @Transactional
     public void findAllArea() {
         List<Area> areas = areaRepository.findAll();
-        for (Area area : areas) {
-            System.out.println(JSONArray.toJSONString(area));
-        }
+        System.out.println(JSONArray.toJSONString(areas.get(0)));
     }
 }
