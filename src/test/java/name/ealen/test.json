@@ -1,45 +1,48 @@
-[
-  {
-    "children": [],
-    "id": "efbe6e05-c7ad-4353-9cb0-04ea4a264eca",
-    "name": "霞山区",
-    "parent": {
+{
+  "children": [
+    {
       "children": [
         {
-          "$ref": "$[0]"
+          "children": [],
+          "id": "56306e26-5761-4225-abb2-da1be09973ff",
+          "name": "笔记本电脑",
+          "parent": {
+            "$ref": "$.children[0]"
+          }
         }
       ],
-      "id": "678c36c9-205b-420c-a709-250bc3b03bbb",
-      "name": "湛江市",
+      "id": "679e81e8-5635-4bb1-ba77-d644ed4f08f6",
+      "name": "电脑",
       "parent": {
-        "children": [
-          {
-            "children": [
-              {
-                "children": [],
-                "id": "5a0f4ac2-c11c-46c4-9391-55a5b9cc9241",
-                "name": "天河区",
-                "parent": {
-                  "$ref": "$[0].parent.parent.children[0]"
-                }
-              }
-            ],
-            "id": "506f88dd-8af0-473e-b2ac-e403f84bad3d",
-            "name": "广州市",
-            "parent": {
-              "$ref": "$[0].parent.parent"
-            }
-          },
-          {
-            "$ref": "$[0].parent"
+        "$ref": "$"
+      }
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "id": "e96a9f8c-7f3b-43bd-add4-e26688177d41",
+          "name": "智能机",
+          "parent": {
+            "$ref": "$.children[1]"
           }
-        ],
-        "id": "a69e8606-c406-4352-889e-08a6cb7feab3",
-        "name": "广东省"
+        },
+        {
+          "children": [],
+          "id": "7d342bda-04a4-45b7-b6a3-c0f6fa436e0a",
+          "name": "老人机",
+          "parent": {
+            "$ref": "$.children[1]"
+          }
+        }
+      ],
+      "id": "d2a1f21a-b82f-4596-9bd0-773318790ba9",
+      "name": "手机",
+      "parent": {
+        "$ref": "$"
       }
     }
-  }
-]
-
-
-
+  ],
+  "id": "52bd9067-2f73-402b-9026-3f77e6bf29e7",
+  "name": "家用电器"
+}

@@ -13,6 +13,10 @@ public interface CategoryRepository extends JpaRepository<Category, String> {
     /**
      * 解决 懒加载 JPA 典型的 N + 1 问题
      */
-    @EntityGraph(value = "Category.Graph", type = EntityGraph.EntityGraphType.FETCH)
+    @EntityGraph(value = "Category.findAll", type = EntityGraph.EntityGraphType.FETCH)
     List<Category> findAll();
+
+
+    @EntityGraph(value = "Category.findByParent",type = EntityGraph.EntityGraphType.FETCH)
+    List<Category> findByParent(Category parent);
 }

@@ -17,9 +17,16 @@ import java.util.Set;
 
 @Entity
 @Table(name = "jpa_category")
-@NamedEntityGraph(name = "Category.Graph", attributeNodes = {@NamedAttributeNode("children")})
+@NamedEntityGraphs({
+        @NamedEntityGraph(name = "Category.findAll", attributeNodes = {@NamedAttributeNode("children")}),
+        @NamedEntityGraph(name = "Category.findByParent",
+                attributeNodes = {@NamedAttributeNode(value = "children", subgraph = "son")},                         //一级延伸
+                subgraphs = {@NamedSubgraph(name = "son", attributeNodes = @NamedAttributeNode(value = "children", subgraph = "grandson")),         //二级延伸
+                        @NamedSubgraph(name = "grandson", attributeNodes = @NamedAttributeNode(value = "children", subgraph = "greatGrandSon")),    //三级延伸
+                        @NamedSubgraph(name = "greatGrandSon", attributeNodes = @NamedAttributeNode(value = "children"))})                          //四级延伸
+//                      有多少次延伸,就有多少个联表关系,自身关联的表设计中,子节点是可以无限延伸的,所以关联数可能查询的.....
+})
 public class Category {
-
     /**
      * Id 使用UUID生成策略
      */

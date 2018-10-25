@@ -2,9 +2,9 @@ spring:
   application:
     name: springboot-jpa N-plus-One
   datasource:
-    url: jdbc:mysql://localhost:3306/yourdatabase
-    username: yourname
-    password: yourpass
+    url: jdbc:mysql://localhost:3306/springboot
+    username: root
+    password: admin
   jpa:
     hibernate:
       ddl-auto: update

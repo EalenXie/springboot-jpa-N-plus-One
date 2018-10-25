@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Example;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.transaction.Transactional;
@@ -71,6 +72,20 @@ public class CategoryRepositoryTest {
     @Transactional
     public void findCategory() {
         List<Category> categories = categoryRepository.findAll();
+
         System.out.println(JSONArray.toJSONString(categories.get(0)));
+
+    }
+
+    @Test
+    @Transactional
+    public void findCategory2() {
+//        Category category= new Category();
+//        category.setName("电脑");
+//        Category computer=  categoryRepository.findOne(Example.of(category));
+        List<Category> categories = categoryRepository.findByParent(null);
+
+        System.out.println(JSONArray.toJSONString(categories.get(0)));
+
     }
 }
